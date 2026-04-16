@@ -15,5 +15,8 @@ while True:
         break
     elif "how are you" in user:
         print("Bot : i'm doing great!")
+    elif "how old are you?" in user :
+        print("Bot : I'm a chatbot i don't have an age.")
     else:
         print("Bot : i don't understand")
+    
