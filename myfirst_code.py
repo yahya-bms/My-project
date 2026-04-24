@@ -3,6 +3,7 @@ import string
 from google import genai
 import os
 import re
+
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
 responses={
