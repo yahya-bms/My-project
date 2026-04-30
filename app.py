@@ -3,8 +3,10 @@ import string
 from google import genai
 import os
 import re
+from dotenv import load_dotenv
 
-client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+load_dotenv('.env.txt')
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 responses={
     "hello":["Hii!","hey there!","hello motherfucker!"],
