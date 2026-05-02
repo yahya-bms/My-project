@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Marked.js for markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fa-solid fa-robot"></i> AI Assistant</h2>
+            </div>
+            <button id="new-chat-btn" class="new-chat-btn">
+                <i class="fa-solid fa-plus"></i> New Chat
+            </button>
+            <div class="sidebar-content">
+                <p class="sidebar-label">Chat Settings</p>
+                <div class="sidebar-item" onclick="clearChat()">
+                    <i class="fa-regular fa-trash-can"></i> Clear History
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <header class="chat-header">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h3>Chat Session</h3>
+            </header>
+
+            <div class="chat-container" id="chat-container">
+                <!-- Welcome Message -->
+                <div class="message ai" id="welcome-message">
+                    <div class="message-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I am your AI Assistant. How can I help you today?</p>
+                        <span class="timestamp">Just now</span>
+                    </div>
+                </div>
+                <!-- Chat messages will be injected here by JS -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <form id="chat-form">
+                    <div class="input-box">
+                        <textarea id="user-input" placeholder="Message AI Assistant..." rows="1" autofocus></textarea>
+                        <button type="submit" id="send-btn" disabled>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+                <div class="input-footer">
+                    AI can make mistakes. Consider verifying important information.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
